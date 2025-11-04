@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public bool canJump;
     public float jumpForce;
     public InputAction jump;
+
+    public int score = 0;
     Rigidbody rb;
     // Start is called once bef1ore the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,9 +53,14 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Obstacle")
+        if (other.gameObject.tag == "Obstacle")
         {
             SceneManager.LoadScene("3D Endless Runner");
+        }
+        else if(other.gameObject.tag == "Score")
+        {
+            score++;
+            Debug.Log(score);
         }
     }
 }
