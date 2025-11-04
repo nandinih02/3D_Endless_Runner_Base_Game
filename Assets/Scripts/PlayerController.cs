@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         jump.Enable();
-        jump.performed += Jump;
     }
 
     private void OnDisable()
@@ -24,15 +23,31 @@ public class PlayerController : MonoBehaviour
         jump.Disable();
     }
 
-    private void Jump(InputAction.CallbackContext context)
+    private void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         Debug.Log("Jump");
+        canJump = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (jump.triggered && canJump)
+        {
+            Jump();
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            canJump = true;
+        }
+        else
+        {
+            canJump = false;
+        }
     }
 }
