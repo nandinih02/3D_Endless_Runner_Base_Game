@@ -15,8 +15,12 @@ public class ObstacleMovement : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void OnBecameInvisible()
+    void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.tag=="Destroyer")
+        {
+            Destroy(this);
+        }
     }
+
 }

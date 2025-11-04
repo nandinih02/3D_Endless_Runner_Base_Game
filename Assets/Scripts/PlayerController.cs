@@ -1,5 +1,7 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public bool canJump;
@@ -45,9 +47,13 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
         }
-        else
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="Obstacle")
         {
-            canJump = false;
+            SceneManager.LoadScene("3D Endless Runner");
         }
     }
 }
