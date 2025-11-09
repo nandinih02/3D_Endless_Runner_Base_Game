@@ -1,0 +1,10 @@
+# ninja log v5
+2	1549	1762591866492370449	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1a68778bbfbcaf1c
+2	1768	1762591866708564990	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e471273cb274b5b
+0	1850	1762591866792353829	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	5394c5622d5e3c9b
+1	1874	1762591866815131355	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	59685c8922b68906
+1	1893	1762591866834100864	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1e0dc07f079de9b0
+3	1922	1762591866864614080	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9154f8292d00a075
+1	2397	1762591867341229401	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e8da1237fba6a248
+0	2671	1762591867607957622	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d294398e975cfe27
+2671	2738	1762591867697535230	/home/nandini/Documents/Unity/3D_Endless_Runner_Base_Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6f185i5b/obj/arm64-v8a/libgame.so	2f4485c4cd66b0ba
