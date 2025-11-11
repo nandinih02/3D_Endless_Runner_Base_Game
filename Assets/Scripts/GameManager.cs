@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint;
     public PlayerController playerController;
     int score;
+    int highScore;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
     public GameObject playBtn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        highScore = PlayerPrefs.GetInt("HighScore");
+        highScoreText.text = highScore.ToString();
         playBtn.SetActive(true);
         player.SetActive(false);
     }
@@ -25,6 +29,8 @@ public class GameManager : MonoBehaviour
         score = playerController.score;
         Debug.Log(score);
         scoreText.text = score.ToString();
+        highScore = PlayerPrefs.GetInt("HighScore");
+        highScoreText.text = highScore.ToString();
     }
 
     IEnumerator SpawnObstacles()
@@ -44,6 +50,7 @@ public class GameManager : MonoBehaviour
         player.SetActive(true);
         playBtn.SetActive(false);
         StartCoroutine("SpawnObstacles");
+
     }
     
 }

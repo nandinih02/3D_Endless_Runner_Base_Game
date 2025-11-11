@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     public InputAction jump;
 
     public int score = 0;
+    public int highScore = 0;
     Rigidbody rb;
     // Start is called once bef1ore the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        highScore=PlayerPrefs.GetInt("HighScore");
 
     }
 
@@ -39,6 +41,11 @@ public class PlayerController : MonoBehaviour
         if (jump.triggered && canJump)
         {
             Jump();
+        }
+        if(score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);;
+            
         }
     }
 
